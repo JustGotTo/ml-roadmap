@@ -1,6 +1,6 @@
-### In this project I will try to implement the LinearRegression using only NumPy
+### In this project I will try to implement the LinearRegression using only NumPy(train test split provided by sklearn)
 # Dataset used - California Housing from sklearn
-
+if __name__ != "__main__": exit()
 import numpy as np
 from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
@@ -13,7 +13,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_
 X_train = np.c_[np.ones(X_train.shape[0]), X_train]
 X_test = np.c_[np.ones(X_test.shape[0]), X_test] #adding a column of ones as a bias
 
-theta = np.linalg.inv(X_train.T.dot(X_train)).dot(X_train.T).dot(Y_train) #A vector of features for linear regression
+theta = np.linalg.inv(X_train.T.dot(X_train)).dot(X_train.T).dot(Y_train) #A vector of features for linear regression that uses normal equation (X^T.X)^-1.X^T.y
 
 meants = np.mean(Y_test) #getting mean dependent variables of test data
 
@@ -26,5 +26,6 @@ r2 = rsquared(X_test, theta, Y_test, meants)
 #function for giving the accuracy of the predicted features of linear regression, could be given as list of instructions instead because it is only called once
 print(r2)
 #printing out the loss function to determine the accuracy
+
 
 
