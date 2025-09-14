@@ -31,7 +31,7 @@ RNN (sequential):   Word1 -> Word2 -> Word3 -> Output
 
 Transformer (parallel):
 (Word1, Word2, Word3) --- Attention Mechanism -- Output
-(words supplied in parallel, without need to do it in the sequence
+(words supplied in parallel, without need to do it in the sequence)
 
 ## What I Don’t Fully Understand Yet
 1. In practice, does attention replace or modify existing connections in the network?
